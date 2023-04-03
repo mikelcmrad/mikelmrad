@@ -1,0 +1,55 @@
+body{
+  margin : 0px;
+  background-color: #202020;
+  position: relative;
+  min-height: 100vh;
+  background-image: url(images/bg.png);
+}
+.menu {
+  width: 15%;
+  background-color: #303030; 
+  position :fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  opacity: 99%;
+  border-top-right-radius: 15%;
+}
+.menu h1{
+  color: white;
+  padding : 20px 0 21px 0;
+  border-bottom-right-radius: 15%;
+  border-bottom: solid white 2px ;
+}
+#title {
+    margin: 0px auto;
+    font-family: 'Dancing Script',cursive;
+  text-align: center;
+} 
+.menuUl li a:hover{
+  filter: invert(100%);
+}
+.menuUl{
+  list-style-type: none;
+  padding : 0px ;  
+}
+.menuUl li{
+  padding: 20px 20px;
+  display: flex;
+  align-items: flex-start;
+}
+.menuImages{
+  width: 30px;
+}
+.menuUl a{
+  color: #AFAFAF;
+  text-decoration: none;
+  font-size: 30px;
+  font-family: 'Rajdhani', sans-serif;
+  transition: all 0.3s;
+  --glow-color: #AFAFAF;
+  font-weight: bold;
+  color: #AFAFAF;
+  text-shadow: 0 0 .5em var(--glow-color);
+}

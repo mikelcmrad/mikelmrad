@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon (2).ico">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleLogin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Rajdhani&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="menu">
+        <h1 id="title">Mikel Mrad</h1>
+        <div class="menuList">
+            <ul class="menuUl">
+                <li><a href="index.html"><img src="images/house.png" class="menuImages"> Home</a></li>
+                <li><a href="schedule.html"><img src="images/schedule (11).png" class="menuImages"> Schedule</a></li>
+                <li><a href="cv.html"><img src="images/resume.png" class="menuImages"> Cv</a></li>
+                <li><a href="login.html"><img src="images/checklist.png" class="menuImages"> Take Test</a></li>
+             </ul>
+        </div>
+    </div>
+    <div class="login-form" id="loginform" >
+        <form>
+          <div class="content"> <div class="input-field">
+            <input id="firstName" type="text" placeholder="First Name" onkeyup="displayButton()">
+          </div>
+          <div class="input-field">
+            <input id="lastName" type="text" placeholder="Last Name" onkeyup="displayButton()">
+          </div>
+            <div class="input-field">
+              <input id="email" type="email" placeholder="Email" onkeyup="displayButton()">
+            </div>
+            <div class="input-field">
+              <input id="password" type="password" placeholder="Password" autocomplete="new-password" onkeyup="displayButton()">
+            </div>
+          </div>
+          <h5 id="textt" style="color:#AFAFAF;float: right;padding-bottom: 20px;">ⓘ If LogIn Button Is Not Visible Please Check Your Credentials</h5>
+          <div class="action" >
+            <button type="submit" id="logBut" style="display: none;">LogIn</button>
+          </div>
+        </form>
+    </div> 
+    <div id="quizPage" class="login-form" style="display: none;">
+        <h2 id="question" class="questions"></h2>
+        <div id="options">
+          <input type="radio" id="option1" name="answer" value="">
+          <label class="questions" for="option1" id="option1-label"></label><br>
+          <input type="radio" id="option2" name="answer" value="">
+          <label class="questions" for="option2" id="option2-label"></label><br>
+          <input type="radio" id="option3" name="answer" value="">
+          <label class="questions" for="option3" id="option3-label"></label><br>
+          <input type="radio" id="option4" name="answer" value="">
+          <label class="questions" for="option4" id="option4-label"></label><br>
+        </div>
+        <button id="submitBtn" style="margin: 30px 0 0 0;width: 150px;">Submit</button>
+        <h2 id="score"  style="display: none; ">Your score is: <span id="score-value" ></span></h2>
+      </div>      
+    <script src="login.js"></script>
+</body>
+</html>
