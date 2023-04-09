@@ -39,7 +39,7 @@
               <input id="password" type="password" placeholder="Password" autocomplete="new-password" onkeyup="displayButton()">
             </div>
           </div>
-          <h5 id="textt" style="color:#AFAFAF;float: right;padding-bottom: 20px;">ⓘ If LogIn Button Is Not Visible Please Check Your Credentials</h5>
+          <h5 id="textt" style="color:#AFAFAF;float: right;padding-bottom: 20px;"> <span id="firstpart">ⓘ The password needs to be 8 characters long!!</span>  <br> <span id="secondpart" style="float: right;">ⓘ The email needs to be valid!!</span></h5>
           <div class="action" >
             <button type="submit" id="logBut" style="display: none;">LogIn</button>
           </div>
@@ -57,9 +57,24 @@
           <input type="radio" id="option4" name="answer" value="">
           <label class="questions" for="option4" id="option4-label"></label><br>
         </div>
-        <button id="submitBtn" style="margin: 30px 0 0 0;width: 150px;">Submit</button>
+        <button id="submitBtn" style="margin: 30px 0 0 0;width: 150px;">Next</button>
         <h2 id="score"  style="display: none; ">Your score is: <span id="score-value" ></span></h2>
       </div>      
+      <div class="rightInfo">
+        <h1 id="title">Credentials</h1>
+        <div class="infoList">
+            <ul class="infoUl">
+                <li id="firstli">Name : </li>
+                <li id="secondli">Email : </li>
+             </ul>
+        </div>
+        <div class="icoList">
+            <ul class="icoUl">
+                <li><a href="https://www.instagram.com/mikel_mrad/"><img src="images/instagram.png" class="icons"></a></li>
+                <li><a href="https://wa.me/96170036858"><img src="images/whatsapp.png" class="icons" ></a> </li>
+             </ul>
+        </div>
+    </div>
     <script src="login.js"></script>
 </body>
 </html>
