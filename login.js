@@ -1,8 +1,7 @@
-
-
 const logBut = document.getElementById("logBut");
 const loginForm = document.getElementById("loginform");
 const quizPagee = document.getElementById("quizPage");
+const retrybtn = document.getElementById("retryBtn");
 
 logBut.addEventListener('click', (event) => {
   event.preventDefault();
@@ -10,15 +9,50 @@ logBut.addEventListener('click', (event) => {
   quizPagee.style.display = '';
   
   });
-  
+const firstNameInput = document.getElementById('firstName');
+const lastNameInput = document.getElementById('lastName');
+const emailInput = document.getElementById('email');
+const firstNameListItem = document.getElementById('firstli');
+const emailListItem = document.getElementById('secondli');
+
+firstNameInput.addEventListener('change', addNameToList);
+lastNameInput.addEventListener('change', addNameToList);
+emailInput.addEventListener('change', addEmailToList);
+
+function addNameToList() {
+  const firstName = firstNameInput.value.trim();
+  const lastName = lastNameInput.value.trim();
+  if (firstName && lastName) {
+    firstNameListItem.textContent = `Name: ${firstName} ${lastName}`;
+  }
+}
+
+function addEmailToList() {
+  const email = emailInput.value.trim();
+  if (email) {
+    emailListItem.textContent = `Email: ${email}`;
+  }
+}
 function displayButton() {
     const firstName = document.getElementById("firstName").value;
     const lastName = document.getElementById("lastName").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const passwordLength = password.length;
+    const firstpart = document.getElementById("firstpart");
+    const secondpart = document.getElementById("secondpart");
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (firstName != "" && lastName != "" && emailRegex.test(email) && passwordLength > 8 ) {
+    if (password.length > 7) {
+      firstpart.style.display = "none";
+    } else {
+      firstpart.style.display = "inline";
+    }
+    if (emailRegex.test(email)) {
+      secondpart.style.display = "none";
+    } else {
+      secondpart.style.display = "inline";
+    }
+    if (firstName != "" && lastName != "" && emailRegex.test(email) && passwordLength > 7 ) {
         document.getElementById("textt").style.display = 'none';
         document.getElementById("logBut").style.display = '';
     } else {    
@@ -26,7 +60,7 @@ function displayButton() {
         document.getElementById("textt").style.display = '';
     }
 }
-/*questions js*/
+
 const quizPage = document.getElementById("quizPage");
 const submitBtn = document.getElementById("submitBtn");
 const questionEl = document.getElementById("question");
@@ -117,6 +151,7 @@ function checkAnswer(answer) {
 
 function showScore() {
   quizPage.innerHTML = `<h2 style="color: #AFAFAF;font-family: 'Rajdhani', sans-serif; text-transform: uppercase;">Your Score: ${score}/${quizQuestions.length}</h2>`;
+
 }
 
 submitBtn.addEventListener("click", () => {
@@ -129,7 +164,13 @@ submitBtn.addEventListener("click", () => {
   currentQuestion++;
   if (currentQuestion >= quizQuestions.length) {
     showScore();
-  } else {
+  } 
+  else if(currentQuestion === quizQuestions.length-1){
+    submitBtn.innerHTML='Submit';
+    displayQuestion();
+    resetOptions();
+  }
+  else {
     displayQuestion();
     resetOptions();
   }
